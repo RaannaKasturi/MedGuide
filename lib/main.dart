@@ -60,7 +60,7 @@ class HomepageState extends State<Homepage> {
       appBar: const DefaultAppBar(),
       backgroundColor: Theme.of(context).colorScheme.onPrimary,
       body: Container(
-        padding: const EdgeInsets.only(top: 20),
+        padding: EdgeInsets.only(top: height * 0.005),
         child: Center(
           child: Column(
             children: [
