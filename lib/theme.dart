@@ -384,3 +384,24 @@ class ColorFamily {
   final Color colorContainer;
   final Color onColorContainer;
 }
+
+class ThemeProvider with ChangeNotifier {
+  ThemeData _themeData = const MaterialTheme(TextTheme()).light();
+
+  ThemeData get themeData => _themeData;
+
+  set themeData(ThemeData themeData) {
+    _themeData = themeData;
+    notifyListeners();
+  }
+
+  void toggleTheme() {
+    if (_themeData == const MaterialTheme(TextTheme()).light()) {
+      themeData = const MaterialTheme(TextTheme()).dark();
+    } else if (_themeData == const MaterialTheme(TextTheme()).dark()) {
+      themeData = const MaterialTheme(TextTheme()).light();
+    } else {
+      themeData = const MaterialTheme(TextTheme()).light();
+    }
+  }
+}
